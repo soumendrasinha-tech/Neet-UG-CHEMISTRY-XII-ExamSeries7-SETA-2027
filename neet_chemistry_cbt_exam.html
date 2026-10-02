@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumendra Sir's Biology Classes-8910587106 - NEET Chemistry CBT Exam Series 7 Set A</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for graphical performance breakdown -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- HTML2Canvas for capturing score card images -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- MathJax for rendering chemical equations and formulas -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* Anti-photo diagonal camera mesh overlay to hamper direct phone photos */
+        .anti-photo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: 
+                repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.025) 0, rgba(0, 0, 0, 0.025) 1px, transparent 0, transparent 5px),
+                repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.025) 0, rgba(0, 0, 0, 0.025) 1px, transparent 0, transparent 5px);
+        }
+
+        /* Dynamic floating candidate watermark grid */
+        .watermark-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9998;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            opacity: 0.12;
+            user-select: none;
+        }
+
+        .watermark-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-25deg);
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: #0f172a;
+            text-align: center;
+            white-space: pre-line;
+        }
+
+        /* Disable text selection across interface */
+        .no-select {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans text-slate-800 no-select min-h-screen flex flex-col justify-between" oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
+
+    <!-- Security Overlay Mesh & Dynamic Floating Watermark -->
+    <div class="anti-photo-overlay"></div>
+    <div id="watermarkGrid" class="watermark-container hidden"></div>
+
+    <!-- LOGIN / VERIFICATION MODAL GATE -->
+    <div id="verificationGate" class="fixed inset-0 bg-slate-900 bg-opacity-95 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-xl w-full p-6 md:p-8 border border-slate-200 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-600"></div>
+            
+            <div class="text-center mb-6">
+                <h1 class="text-2xl md:text-3xl font-extrabold text-teal-950 tracking-tight">Soumendra Sir's Biology Classes-8910587106</h1>
+                <p class="text-sm font-semibold text-slate-500 mt-1"><i class="fa-solid fa-phone mr-1"></i> Contact: +91 8910587106</p>
+                <div class="inline-block bg-teal-50 text-teal-800 text-xs font-bold px-3 py-1.5 rounded-full mt-3 border border-teal-200">
+                    NEET CHEMISTRY XII EXAM SERIES 7 SET A
+                </div>
+            </div>
+
+            <!-- Rules & Info Box -->
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-6 text-xs text-slate-700 space-y-2">
+                <p class="font-bold text-slate-900 border-b pb-1 text-sm"><i class="fa-solid fa-circle-info text-teal-600 mr-1.5"></i> Exam Instructions & Syllabus:</p>
+                <ul class="list-disc pl-4 space-y-1">
+                    <li><strong>Syllabus:</strong> Biomolecules (Carbohydrates, Proteins, Vitamins, Nucleic Acids, Hormones) & Practical Chemistry (Lassaigne Test, Functional Groups, Preparations, Titrations, Salt Analysis, Calorimetry, Sols, Kinetics).</li>
+                    <li><strong>Total Questions:</strong> 45 Questions | <strong>Total Marks:</strong> 180 Marks | <strong>Duration:</strong> 1 Hour (60 Mins).</li>
+                    <li><strong>Marking Scheme:</strong> <span class="text-emerald-700 font-bold">+4</span> for correct response, <span class="text-rose-600 font-bold">-1</span> for wrong response, <span class="text-slate-500 font-bold">0</span> for unattempted.</li>
+                    <li><strong>Anti-Cheating Rules:</strong> Fullscreen mode is mandatory. Switching tabs or exiting fullscreen triggers <span class="text-rose-600 font-bold">Auto-Submission</span>.</li>
+                    <li>Password format is today's date in <strong>DDMMYYYY</strong> format.</li>
+                </ul>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Candidate Full Name</label>
+                    <input type="text" id="candidateName" required placeholder="Enter your full name" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none text-sm transition-all" />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Exam Password (DDMMYYYY)</label>
+                        <input type="password" id="examPassword" required placeholder="DDMMYYYY" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none text-sm transition-all" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Security Captcha</label>
+                        <div class="flex items-center space-x-2">
+                            <span id="captchaDisplay" class="bg-slate-200 text-slate-800 font-mono font-bold px-3 py-2.5 rounded-lg text-center tracking-widest text-sm border border-slate-300 select-none">? + ? = ?</span>
+                            <button type="button" onclick="generateCaptcha()" class="text-slate-500 hover:text-slate-700 p-2"><i class="fa-solid fa-arrows-rotate"></i></button>
+                            <input type="text" id="captchaInput" required placeholder="Ans" class="w-20 px-3 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none text-sm text-center font-bold" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="loginError" class="hidden bg-rose-50 text-rose-700 text-xs font-semibold p-2.5 rounded-lg border border-rose-200 text-center"></div>
+
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-teal-700 to-indigo-700 hover:from-teal-800 hover:to-indigo-800 text-white font-bold rounded-xl shadow-lg transition-all text-sm flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-play"></i>
+                    <span>START CBT EXAMINATION</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CBT EXAM MAIN HEADER -->
+    <header class="bg-gradient-to-r from-teal-950 via-slate-900 to-indigo-950 text-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-2">
+            <div>
+                <h1 class="text-base md:text-lg font-bold tracking-tight">Soumendra Sir's Biology Classes-8910587106</h1>
+                <p class="text-xs text-teal-200 font-medium">NEET CHEMISTRY XII EXAM SERIES 7 SET A | Biomolecules & Practical Chemistry</p>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <div class="bg-slate-800/80 border border-slate-700 rounded-lg px-3 py-1.5 flex items-center space-x-2">
+                    <i class="fa-regular fa-clock text-amber-400 text-sm animate-pulse"></i>
+                    <span class="text-xs text-slate-300">Time Left:</span>
+                    <span id="timerDisplay" class="font-mono font-bold text-sm text-amber-300">60:00</span>
+                </div>
+                <div class="hidden sm:block bg-teal-950 border border-teal-800 rounded-lg px-3 py-1.5 text-xs text-right">
+                    <span class="text-slate-400 block text-[10px]">CANDIDATE</span>
+                    <span id="headerCandidateName" class="font-bold text-teal-200">Candidate Name</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CBT WORKSPACE -->
+    <main id="cbtMainInterface" class="max-w-7xl mx-auto w-full px-2 sm:px-4 py-4 flex-grow flex flex-col md:flex-row gap-4">
+        
+        <!-- LEFT PANEL: QUESTION CONTAINER -->
+        <section class="flex-grow bg-white rounded-xl shadow-md border border-slate-200 flex flex-col justify-between overflow-hidden">
+            
+            <!-- Question Box Header -->
+            <div class="bg-slate-50 border-b border-slate-200 px-4 py-3 flex justify-between items-center">
+                <span class="text-xs md:text-sm font-bold text-slate-700 bg-slate-200 px-3 py-1 rounded-md" id="questionNumberBadge">
+                    Question 1 of 45
+                </span>
+                <span class="text-xs font-semibold text-slate-500">
+                    Marks: <span class="text-emerald-600 font-bold">+4</span> | <span class="text-rose-600 font-bold">-1</span>
+                </span>
+            </div>
+
+            <!-- Question Body Area -->
+            <div class="p-4 md:p-6 overflow-y-auto max-h-[calc(100vh-260px)] min-h-[380px]" id="questionContentArea">
+                <!-- Dynamic Question Content Rendered Here -->
+            </div>
+
+            <!-- CBT Action Control Bar -->
+            <div class="bg-slate-50 border-t border-slate-200 px-4 py-3 flex flex-wrap gap-2 items-center justify-between">
+                <div class="flex gap-2">
+                    <button onclick="markForReview()" class="px-3 py-2 bg-amber-100 hover:bg-amber-200 text-amber-800 border border-amber-300 text-xs font-bold rounded-lg transition-all flex items-center space-x-1">
+                        <i class="fa-regular fa-bookmark"></i>
+                        <span>Mark for Review</span>
+                    </button>
+                    <button onclick="clearResponse()" class="px-3 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold rounded-lg transition-all flex items-center space-x-1">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <span>Clear Response</span>
+                    </button>
+                </div>
+
+                <div class="flex gap-2">
+                    <button onclick="prevQuestion()" id="prevBtn" class="px-4 py-2 bg-slate-700 hover:bg-slate-800 text-white text-xs font-bold rounded-lg transition-all disabled:opacity-40">
+                        <i class="fa-solid fa-chevron-left mr-1"></i> Previous
+                    </button>
+                    <button onclick="nextQuestion()" id="nextBtn" class="px-4 py-2 bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold rounded-lg transition-all shadow-md">
+                        Save & Next <i class="fa-solid fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT PANEL: COLOURFUL PALETTE DOTS -->
+        <aside class="w-full md:w-80 bg-white rounded-xl shadow-md border border-slate-200 p-4 flex flex-col justify-between min-w-[280px]">
+            <div>
+                <h2 class="text-sm font-bold text-slate-800 border-b border-slate-200 pb-2 mb-3 flex justify-between items-center">
+                    <span><i class="fa-solid fa-table-cells text-teal-600 mr-1.5"></i> Question Palette</span>
+                </h2>
+
+                <!-- Status Legend -->
+                <div class="grid grid-cols-2 gap-2 text-[11px] mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <div class="flex items-center space-x-1.5">
+                        <span class="w-3.5 h-3.5 rounded-full bg-emerald-500 inline-block border border-emerald-600"></span>
+                        <span class="text-slate-600 font-medium">Answered (<span id="countAnswered">0</span>)</span>
+                    </div>
+                    <div class="flex items-center space-x-1.5">
+                        <span class="w-3.5 h-3.5 rounded-full bg-rose-500 inline-block border border-rose-600"></span>
+                        <span class="text-slate-600 font-medium">Not Answered (<span id="countNotAnswered">45</span>)</span>
+                    </div>
+                    <div class="flex items-center space-x-1.5">
+                        <span class="w-3.5 h-3.5 rounded-full bg-amber-400 inline-block border border-amber-500"></span>
+                        <span class="text-slate-600 font-medium">Marked Review (<span id="countMarked">0</span>)</span>
+                    </div>
+                    <div class="flex items-center space-x-1.5">
+                        <span class="w-3.5 h-3.5 rounded-full bg-slate-200 inline-block border border-slate-300"></span>
+                        <span class="text-slate-600 font-medium">Not Visited (<span id="countNotVisited">44</span>)</span>
+                    </div>
+                </div>
+
+                <!-- Palette Grid Container -->
+                <div id="paletteGrid" class="grid grid-cols-5 gap-2 max-h-72 md:max-h-96 overflow-y-auto p-1 border rounded-lg border-slate-100">
+                    <!-- Dots Generated Dynamically -->
+                </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-200">
+                <button onclick="confirmSubmitTest()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg shadow-md transition-all text-xs flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>SUBMIT TEST</span>
+                </button>
+            </div>
+        </aside>
+    </main>
+
+    <!-- END RESULT & FEEDBACK REPORT (HIDDEN INITIALLY) -->
+    <div id="resultModal" class="hidden fixed inset-0 bg-slate-900 bg-opacity-95 z-50 overflow-y-auto p-4 flex items-center justify-center">
+        <div class="max-w-3xl w-full bg-white rounded-2xl shadow-2xl p-6 md:p-8 my-8 relative border border-slate-200">
+            
+            <!-- Result Card Container (Captured for Image) -->
+            <div id="resultCardCapture" class="p-4 bg-white rounded-xl border border-slate-200">
+                
+                <!-- Report Header -->
+                <div class="text-center border-b pb-4 mb-4">
+                    <h2 class="text-2xl font-extrabold text-teal-950">Soumendra Sir's Biology Classes-8910587106</h2>
+                    <p class="text-xs font-semibold text-slate-500">Contact: +91 8910587106 | NEET CHEMISTRY XII EXAM SERIES 7 SET A</p>
+                    <div class="mt-2 inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full border border-emerald-300">
+                        OFFICIAL BIOMOLECULES & PRACTICAL CHEMISTRY SCORECARD
+                    </div>
+                </div>
+
+                <!-- Candidate Info Summary -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs mb-6">
+                    <div>
+                        <span class="text-slate-400 block text-[10px]">CANDIDATE NAME</span>
+                        <span id="resCandidateName" class="font-bold text-slate-800">Candidate Name</span>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block text-[10px]">TOTAL MARKS</span>
+                        <span id="resTotalScore" class="font-bold text-teal-700 text-base">0 / 180</span>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block text-[10px]">TOTAL ATTEMPTED</span>
+                        <span id="resAttempted" class="font-bold text-slate-800">0 / 45</span>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block text-[10px]">ACCURACY RATE</span>
+                        <span id="resAccuracy" class="font-bold text-emerald-600 text-base">0%</span>
+                    </div>
+                </div>
+
+                <!-- Graphical Representation & Detailed Breakdown -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-6">
+                    <div class="w-full h-48 flex justify-center items-center">
+                        <canvas id="resultChart"></canvas>
+                    </div>
+
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between items-center p-2 rounded-md bg-emerald-50 border border-emerald-200">
+                            <span class="font-semibold text-emerald-800"><i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i> Correct Answers (+4)</span>
+                            <span id="resCorrect" class="font-bold text-emerald-800 text-sm">0</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 rounded-md bg-rose-50 border border-rose-200">
+                            <span class="font-semibold text-rose-800"><i class="fa-solid fa-circle-xmark text-rose-600 mr-1.5"></i> Incorrect Answers (-1)</span>
+                            <span id="resIncorrect" class="font-bold text-rose-800 text-sm">0</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 rounded-md bg-slate-100 border border-slate-200">
+                            <span class="font-semibold text-slate-700"><i class="fa-solid fa-circle-minus text-slate-400 mr-1.5"></i> Unattempted Questions (0)</span>
+                            <span id="resUnattempted" class="font-bold text-slate-700 text-sm">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-[10px] text-center text-slate-400 border-t pt-2">
+                    Generated automatically by NEET Chemistry CBT Exam System | Verified & Authenticated Report
+                </div>
+            </div>
+
+            <!-- WhatsApp Send Button -->
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                <button onclick="sendMarksToWhatsApp()" class="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-all text-xs flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>SEND RESULT CARD TO SIR (+91 8910587106)</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // MASTER QUESTION BANK (45 QUESTIONS: Biomolecules & Practical Chemistry)
+        const masterQuestions = [
+            
+            // ================= 10 STATEMENT-BASED QUESTIONS =================
+            {
+                type: "statement",
+                id: 1,
+                q: "Select the correct option regarding Statement I and Statement II:",
+                statement1: "Glucose and fructose are functional isomers, where D-glucose is an aldohexose and D-fructose is a ketohexose.",
+                statement2: "Both D-glucose and D-fructose reduce Fehling's solution and Tollens' reagent because fructose undergoes tautomerization to glucose in alkaline medium.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 0
+            },
+            {
+                type: "statement",
+                id: 2,
+                q: "Evaluate the statements regarding sucrose and its hydrolysis:",
+                statement1: "Sucrose is a non-reducing disaccharide because the glycosidic linkage involves $\\text{C}_1$ of $\\alpha$-D-glucose and $\\text{C}_2$ of $\\beta$-D-fructose.",
+                statement2: "Hydrolysis of sucrose yields an equimolar mixture of $\\alpha$-D-glucose and $\\beta$-D-fructose, resulting in a change in optical rotation from dextrorotatory to levorotatory.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 0
+            },
+            {
+                type: "statement",
+                id: 3,
+                q: "Consider protein structure and denaturation:",
+                statement1: "Denaturation of protein destroys its secondary and tertiary structures while leaving its primary structure intact.",
+                statement2: "Denaturation is always irreversible; example includes boiling of egg white where soluble globular protein converts to insoluble fibrous protein.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 2
+            },
+            {
+                type: "statement",
+                id: 4,
+                q: "Read statements on Vitamins and Nucleic Acids:",
+                statement1: "Vitamin C (ascorbic acid) is a water-soluble vitamin and cannot be stored in the body, requiring regular intake in diet.",
+                statement2: "DNA contains adenine, guanine, cytosine, and uracil, whereas RNA contains thymine instead of uracil.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 2
+            },
+            {
+                type: "statement",
+                id: 5,
+                q: "Evaluate statements regarding Lassaigne's test for Nitrogen and Sulphur:",
+                statement1: "When both Nitrogen and Sulphur are present in an organic compound, sodium fusion extract gives a blood-red color with $\\text{FeCl}_3$ due to formation of $[\\text{Fe(SCN)}]^{2+}$.",
+                statement2: "In Lassaigne's test for halogens, sodium fusion extract is boiled with concentrated $\\text{HNO}_3$ prior to adding $\\text{AgNO}_3$ to decompose any $\\text{NaCN}$ or $\\text{Na}_2\\text{S}$.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 0
+            },
+            {
+                type: "statement",
+                id: 6,
+                q: "Consider functional group identification tests:",
+                statement1: "Phenols give a deep violet/blue color with neutral $\\text{FeCl}_3$ solution, whereas aliphatic alcohols do not show this test.",
+                statement2: "Primary aliphatic amines give a characteristic foul smell of alkyl isocyanide when heated with $\\text{CHCl}_3$ and alcoholic $\\text{KOH}$.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 0
+            },
+            {
+                type: "statement",
+                id: 7,
+                q: "Evaluate statements on preparations of double salts and organic compounds:",
+                statement1: "Mohr's salt $[\\text{FeSO}_4\\cdot(\\text{NH}_4)_2\\text{SO}_4\\cdot6\\text{H}_2\\text{O}]$ is a double salt that dissociates completely into $\\text{Fe}^{2+}$, $\\text{NH}_4^+$, and $\\text{SO}_4^{2-}$ ions in water.",
+                statement2: "Aniline yellow is an azo dye prepared by coupling benzenediazonium chloride with phenol in strongly acidic medium.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 2
+            },
+            {
+                type: "statement",
+                id: 8,
+                q: "Read statements on Redox Titrations involving $\\text{KMnO}_4$:",
+                statement1: "In titrations of $\\text{KMnO}_4$ against oxalic acid, heating the oxalic acid solution to $60-70^\\circ\\text{C}$ is necessary to accelerate the reaction rate.",
+                statement2: "Concentrated $\\text{HCl}$ or $\\text{HNO}_3$ can be used as an acid medium instead of dilute $\\text{H}_2\\text{SO}_4$ in $\\text{KMnO}_4$ titrations.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 2
+            },
+            {
+                type: "statement",
+                id: 9,
+                q: "Consider Chemical Principles in Qualitative Salt Analysis:",
+                statement1: "Group III cations ($\\text{Fe}^{3+}, \\text{Al}^{3+}$) are precipitated as hydroxides using $\\text{NH}_4\\text{OH}$ in the presence of $\\text{NH}_4\\text{Cl}$.",
+                statement2: "The addition of $\\text{NH}_4\\text{Cl}$ suppresses the ionization of $\\text{NH}_4\\text{OH}$ due to common ion effect, keeping $[\\text{OH}^-]$ low enough to selectively precipitate Group III cations.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 0
+            },
+            {
+                type: "statement",
+                id: 10,
+                q: "Evaluate statements on Surface Chemistry and Colloids:",
+                statement1: "Starch sol is a lyophilic colloid and is self-stabilized due to strong interaction between dispersed phase and dispersion medium.",
+                statement2: "$\\text{As}_2\\text{S}_3$ sol is a lyophobic colloid and can be prepared by double decomposition between arsenious oxide and hydrogen sulfide.",
+                options: [
+                    "Both Statement I and Statement II are correct.",
+                    "Both Statement I and Statement II are incorrect.",
+                    "Statement I is correct but Statement II is incorrect.",
+                    "Statement I is incorrect but Statement II is correct."
+                ],
+                correct: 0
+            },
+
+            // ================= 5 ASSERTION & REASONING QUESTIONS =================
+            {
+                type: "ar",
+                id: 11,
+                q: "Assertion (A): $\\alpha$-amino acids generally exist as dipolar ions called zwitterions in aqueous solution.\nReason (R): Amino acids contain both an acidic carboxyl group ($-\\text{COOH}$) and a basic amino group ($-\\text{NH}_2$) within the same molecule.",
+                options: [
+                    "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+                    "Both (A) and (R) are true but (R) is NOT the correct explanation of (A).",
+                    "(A) is true but (R) is false.",
+                    "(A) is false but (R) is true."
+                ],
+                correct: 0
+            },
+            {
+                type: "ar",
+                id: 12,
+                q: "Assertion (A): D-Glucose does not form hydrogen sulphite addition product with $\\text{NaHSO}_3$.\nReason (R): The open-chain form of D-glucose is in equilibrium with its cyclic hemiacetal forms, leaving very small concentration of free aldehyde group.",
+                options: [
+                    "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+                    "Both (A) and (R) are true but (R) is NOT the correct explanation of (A).",
+                    "(A) is true but (R) is false.",
+                    "(A) is false but (R) is true."
+                ],
+                correct: 0
+            },
+            {
+                type: "ar",
+                id: 13,
+                q: "Assertion (A): In group analysis, $\\text{H}_2\\text{S}$ gas is passed in presence of dilute $\\text{HCl}$ to precipitate Group II cations.\nReason (R): Dilute $\\text{HCl}$ decreases the ionization of $\\text{H}_2\\text{S}$ due to common ion effect, providing sufficient $[\\text{S}^{2-}]$ to exceed solubility product ($K_{sp}$) of Group II sulfides only.",
+                options: [
+                    "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+                    "Both (A) and (R) are true but (R) is NOT the correct explanation of (A).",
+                    "(A) is true but (R) is false.",
+                    "(A) is false but (R) is true."
+                ],
+                correct: 0
+            },
+            {
+                type: "ar",
+                id: 14,
+                q: "Assertion (A): In the preparation of iodoform from acetone, $\\text{NaOH}$ and $\\text{I}_2$ are reacted with propanone.\nReason (R): Sodium hypoiodite ($\\text{NaOI}$) formed in situ acts as an oxidizing as well as halogenating agent.",
+                options: [
+                    "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+                    "Both (A) and (R) are true but (R) is NOT the correct explanation of (A).",
+                    "(A) is true but (R) is false.",
+                    "(A) is false but (R) is true."
+                ],
+                correct: 0
+            },
+            {
+                type: "ar",
+                id: 15,
+                q: "Assertion (A): Maltose and Lactose are reducing sugars.\nReason (R): In maltose and lactose, the hemiacetal carbon (anomeric carbon) of one of the monosaccharide units is free.",
+                options: [
+                    "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+                    "Both (A) and (R) are true but (R) is NOT the correct explanation of (A).",
+                    "(A) is true but (R) is false.",
+                    "(A) is false but (R) is true."
+                ],
+                correct: 0
+            },
+
+            // ================= 5 CASE STUDY-BASED QUESTIONS =================
+            {
+                type: "case",
+                id: 16,
+                caseTitle: "CASE STUDY: Quantitative Volumetric Analysis with Potassium Permanganate",
+                caseText: "Potassium permanganate ($\\text{KMnO}_4$) acts as a powerful oxidizing agent in acidic medium where $\\text{MnO}_4^-$ is reduced to $\\text{Mn}^{2+}$ (change in oxidation state from +7 to +2, n-factor = 5). Standard solutions of oxalic acid ($\\text{H}_2\\text{C}_2\\text{O}_4\\cdot2\\text{H}_2\\text{O}$, Equivalent mass = 63) or Mohr's salt $[\\text{FeSO}_4\\cdot(\\text{NH}_4)_2\\text{SO}_4\\cdot6\\text{H}_2\\text{O}$, Equivalent mass = 392] are used as primary standards to standardize $\\text{KMnO}_4$.",
+                q: "What is the equivalent mass of $\\text{KMnO}_4$ in strongly acidic medium? (Molar mass of $\\text{KMnO}_4 = M$)",
+                options: [
+                    "$M / 5$",
+                    "$M / 3$",
+                    "$M / 1$",
+                    "$M / 6$"
+                ],
+                correct: 0
+            },
+            {
+                type: "case",
+                id: 17,
+                caseTitle: "CASE STUDY: Quantitative Volumetric Analysis with Potassium Permanganate",
+                caseText: "Potassium permanganate ($\\text{KMnO}_4$) acts as a powerful oxidizing agent in acidic medium where $\\text{MnO}_4^-$ is reduced to $\\text{Mn}^{2+}$ (change in oxidation state from +7 to +2, n-factor = 5). Standard solutions of oxalic acid ($\\text{H}_2\\text{C}_2\\text{O}_4\\cdot2\\text{H}_2\\text{O}$, Equivalent mass = 63) or Mohr's salt $[\\text{FeSO}_4\\cdot(\\text{NH}_4)_2\\text{SO}_4\\cdot6\\text{H}_2\\text{O}$, Equivalent mass = 392] are used as primary standards to standardize $\\text{KMnO}_4$.",
+                q: "Why is Mohr's salt preferred over Ferrous Sulphate ($\\text{FeSO}_4\\cdot7\\text{H}_2\\text{O}$) as a primary standard in volumetric analysis?",
+                options: [
+                    "Mohr's salt is stable against atmospheric oxidation by air",
+                    "Mohr's salt has a lower molecular weight",
+                    "Mohr's salt acts as a self-indicator",
+                    "Mohr's salt dissolves in organic solvents"
+                ],
+                correct: 0
+            },
+            {
+                type: "case",
+                id: 18,
+                caseTitle: "CASE STUDY: Quantitative Volumetric Analysis with Potassium Permanganate",
+                caseText: "Potassium permanganate ($\\text{KMnO}_4$) acts as a powerful oxidizing agent in acidic medium where $\\text{MnO}_4^-$ is reduced to $\\text{Mn}^{2+}$ (change in oxidation state from +7 to +2, n-factor = 5). Standard solutions of oxalic acid ($\\text{H}_2\\text{C}_2\\text{O}_4\\cdot2\\text{H}_2\\text{O}$, Equivalent mass = 63) or Mohr's salt $[\\text{FeSO}_4\\cdot(\\text{NH}_4)_2\\text{SO}_4\\cdot6\\text{H}_2\\text{O}$, Equivalent mass = 392] are used as primary standards to standardize $\\text{KMnO}_4$.",
+                q: "How many moles of $\\text{KMnO}_4$ are required to react completely with 5 moles of oxalate ions ($\\text{C}_2\\text{O}_4^{2-}$) in acidic medium?",
+                options: [
+                    "2 moles",
+                    "5 moles",
+                    "3 moles",
+                    "1 mole"
+                ],
+                correct: 0
+            },
+            {
+                type: "case",
+                id: 19,
+                caseTitle: "CASE STUDY: Quantitative Volumetric Analysis with Potassium Permanganate",
+                caseText: "Potassium permanganate ($\\text{KMnO}_4$) acts as a powerful oxidizing agent in acidic medium where $\\text{MnO}_4^-$ is reduced to $\\text{Mn}^{2+}$ (change in oxidation state from +7 to +2, n-factor = 5). Standard solutions of oxalic acid ($\\text{H}_2\\text{C}_2\\text{O}_4\\cdot2\\text{H}_2\\text{O}$, Equivalent mass = 63) or Mohr's salt $[\\text{FeSO}_4\\cdot(\\text{NH}_4)_2\\text{SO}_4\\cdot6\\text{H}_2\\text{O}$, Equivalent mass = 392] are used as primary standards to standardize $\\text{KMnO}_4$.",
+                q: "In the titration of $\\text{KMnO}_4$ with oxalic acid, what acts as the autocatalyst to speed up the reaction after initial lag?",
+                options: [
+                    "$\\text{Mn}^{2+}$ ions",
+                    "$\\text{K}^+$ ions",
+                    "$\\text{CO}_2$ gas",
+                    "$\\text{SO}_4^{2-}$ ions"
+                ],
+                correct: 0
+            },
+            {
+                type: "case",
+                id: 20,
+                caseTitle: "CASE STUDY: Quantitative Volumetric Analysis with Potassium Permanganate",
+                caseText: "Potassium permanganate ($\\text{KMnO}_4$) acts as a powerful oxidizing agent in acidic medium where $\\text{MnO}_4^-$ is reduced to $\\text{Mn}^{2+}$ (change in oxidation state from +7 to +2, n-factor = 5). Standard solutions of oxalic acid ($\\text{H}_2\\text{C}_2\\text{O}_4\\cdot2\\text{H}_2\\text{O}$, Equivalent mass = 63) or Mohr's salt $[\\text{FeSO}_4\\cdot(\\text{NH}_4)_2\\text{SO}_4\\cdot6\\text{H}_2\\text{O}$, Equivalent mass = 392] are used as primary standards to standardize $\\text{KMnO}_4$.",
+                q: "What indicator is added during $\\text{KMnO}_4$ redox titrations?",
+                options: [
+                    "No external indicator is needed as $\\text{KMnO}_4$ acts as self-indicator",
+                    "Phenolphthalein",
+                    "Methyl Orange",
+                    "Starch solution"
+                ],
+                correct: 0
+            },
+
+            // ================= 25 NUMERICAL / CRITICAL THINKING QUESTIONS =================
+            {
+                type: "critical",
+                id: 21,
+                q: "A sample of $1.26\\text{ g}$ of oxalic acid crystals ($\\text{H}_2\\text{C}_2\\text{O}_4\\cdot2\\text{H}_2\\text{O}$, Molar Mass = $126\\text{ g/mol}$) is dissolved in water to prepare $250\\text{ mL}$ standard solution. Calculate the molarity and normality of this solution:",
+                options: [
+                    "Molarity = $0.04\\text{ M}$, Normality = $0.08\\text{ N}$",
+                    "Molarity = $0.08\\text{ M}$, Normality = $0.04\\text{ N}$",
+                    "Molarity = $0.02\\text{ M}$, Normality = $0.04\\text{ N}$",
+                    "Molarity = $0.10\\text{ M}$, Normality = $0.20\\text{ N}$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 22,
+                q: "How many grams of Mohr's salt $[\\text{FeSO}_4\\cdot(\\text{NH}_4)_2\\text{SO}_4\\cdot6\\text{H}_2\\text{O}$, Molar mass = $392\\text{ g/mol}]$ are required to prepare $250\\text{ mL}$ of $0.05\\text{ N}$ standard solution for titration?",
+                options: [
+                    "$4.90\\text{ g}$",
+                    "$9.80\\text{ g}$",
+                    "$2.45\\text{ g}$",
+                    "$1.225\\text{ g}$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 23,
+                q: "$20\\text{ mL}$ of $0.02\\text{ M } \\text{KMnO}_4$ solution completely oxidizes $25\\text{ mL}$ of an acidified Mohr's salt solution. What is the molarity of $\\text{Fe}^{2+}$ in the Mohr's salt solution?",
+                options: [
+                    "$0.08\\text{ M}$",
+                    "$0.04\\text{ M}$",
+                    "$0.02\\text{ M}$",
+                    "$0.16\\text{ M}$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 24,
+                q: "When $0.5\\text{ g}$ of anhydrous $\\text{CuSO}_4$ (Molar Mass = $159.5\\text{ g/mol}$) is dissolved in $100\\text{ g}$ of water in a calorimeter, temperature rises by $0.8^\\circ\\text{C}$. Assuming specific heat of solution as $4.184\\text{ J/g}\\cdot^\\circ\\text{C}$, calculate enthalpy of solution ($\\Delta H_{sol}$) of $\\text{CuSO}_4$ per mole:",
+                options: [
+                    "$-106.7\\text{ kJ/mol}$",
+                    "$-53.3\\text{ kJ/mol}$",
+                    "$-26.7\\text{ kJ/mol}$",
+                    "$-213.4\\text{ kJ/mol}$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 25,
+                q: "During neutralization of $100\\text{ mL}$ of $1.0\\text{ M } \\text{HCl}$ with $100\\text{ mL}$ of $1.0\\text{ M } \\text{NaOH}$ in a insulated calorimeter, the heat evolved is measured to be $5.71\\text{ kJ}$. What is the enthalpy of neutralization per mole of $\\text{H}^+$ ions?",
+                options: [
+                    "$-57.1\\text{ kJ/mol}$",
+                    "$-114.2\\text{ kJ/mol}$",
+                    "$-28.55\\text{ kJ/mol}$",
+                    "$-5.71\\text{ kJ/mol}$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 26,
+                q: "In the kinetic study of reaction between $\\text{I}^-$ and $\\text{H}_2\\text{O}_2$ in presence of starch indicator, doubling the concentration of $\\text{H}_2\\text{O}_2$ doubles the rate, and quadrupling $[\\text{I}^-]$ quadruples the rate. The overall order of the reaction is:",
+                options: [
+                    "2 (Second Order)",
+                    "1 (First Order)",
+                    "3 (Third Order)",
+                    "0 (Zero Order)"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 27,
+                q: "Which of the following optical activity characteristics is shown by a fresh solution of $\\alpha$-D-glucose undergo mutarotation until equilibrium is reached?",
+                options: [
+                    "Specific rotation changes from $+112^\\circ$ to $+52.7^\\circ$",
+                    "Specific rotation changes from $+19^\\circ$ to $+52.7^\\circ$",
+                    "Specific rotation changes from $-92^\\circ$ to $+52.7^\\circ$",
+                    "Specific rotation remains constant at $+112^\\circ$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 28,
+                q: "How many chiral carbon centers are present in open-chain D-glucose and cyclic $\\alpha$-D-glucopyranose respectively?",
+                options: [
+                    "4 and 5",
+                    "3 and 4",
+                    "4 and 4",
+                    "5 and 5"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 29,
+                q: "Identify the disaccharide composed of $\\beta$-D-galactose and $\\beta$-D-glucose linked via $\\text{C}_1-\\text{C}_4$ glycosidic bond:",
+                options: [
+                    "Lactose",
+                    "Maltose",
+                    "Sucrose",
+                    "Cellobiose"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 30,
+                q: "A tripeptide contains three amino acid residues. How many peptide bonds and water molecules are lost during its biosynthesis?",
+                options: [
+                    "2 peptide bonds, 2 water molecules lost",
+                    "3 peptide bonds, 3 water molecules lost",
+                    "2 peptide bonds, 1 water molecule lost",
+                    "1 peptide bond, 1 water molecule lost"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 31,
+                q: "Which functional group test gives a purple/violet ring at the junction of two liquid layers when an aqueous carbohydrate solution is treated with alcoholic $\\alpha$-naphthol followed by conc. $\\text{H}_2\\text{SO}_4$?",
+                options: [
+                    "Molisch's Test",
+                    "Barfoed's Test",
+                    "Seliwanoff's Test",
+                    "Bial's Test"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 32,
+                q: "In qualitative inorganic salt analysis, addition of potassium ferrocyanide $\\text{K}_4[\\text{Fe(CN)}_6]$ solution to a salt solution yields a Prussian blue precipitate. The cation present is:",
+                options: [
+                    "$\\text{Fe}^{3+}$",
+                    "$\\text{Cu}^{2+}$",
+                    "$\\text{Al}^{3+}$",
+                    "$\\text{Zn}^{2+}$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 33,
+                q: "A brown ring test is performed for detection of nitrate ion ($\\text{NO}_3^-$). The chemical formula of the brown ring complex is:",
+                options: [
+                    "$[\\text{Fe(H}_2\\text{O)}_5(\\text{NO})]\\text{SO}_4$",
+                    "$[\\text{Fe(NO)}_6]\\text{SO}_4$",
+                    "$[\\text{Fe(H}_2\\text{O)}_6]\\text{SO}_4$",
+                    "$\\text{Fe}_2(\\text{SO}_4)_3\\cdot\\text{NO}$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 34,
+                q: "When potassium dichromate and conc. $\\text{H}_2\\text{SO}_4$ are heated with a salt containing chloride ions ($\\text{Cl}^-$), reddish-brown fumes of 'X' are evolved. Passing 'X' into $\\text{NaOH}$ gives a yellow solution of 'Y'. Identify 'X' and 'Y':",
+                options: [
+                    "'X' = $\\text{CrO}_2\\text{Cl}_2$ (Chromyl chloride), 'Y' = $\\text{Na}_2\\text{CrO}_4$",
+                    "'X' = $\\text{Cl}_2$ gas, 'Y' = $\\text{NaClO}$",
+                    "'X' = $\\text{CrCl}_3$, 'Y' = $\\text{NaCrO}_2$",
+                    "'X' = $\\text{CrO}_3$, 'Y' = $\\text{Na}_2\\text{Cr}_2\\text{O}_7$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 35,
+                q: "An organic compound 'A' gives a yellow crystalline precipitate on warming with iodine and sodium hydroxide solution. 'A' also reduces Tollens' reagent. Identify 'A':",
+                options: [
+                    "Acetaldehyde ($\\text{CH}_3\\text{CHO}$)",
+                    "Acetone ($\\text{CH}_3\\text{COCH}_3$)",
+                    "Formaldehyde ($\\text{HCHO}$)",
+                    "Ethanol ($\\text{CH}_3\\text{CH}_2\\text{OH}$)"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 36,
+                q: "During acetyl chloride treatment in the preparation of Acetanilide from Aniline, why is Pyridine or Sodium Acetate added to the reaction mixture?",
+                options: [
+                    "To neutralize $\\text{HCl}$ formed and drive the equilibrium forward",
+                    "To act as a reducing agent",
+                    "To prevent oxidation of aniline to nitrobenzene",
+                    "To act as a dehydrating agent"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 37,
+                q: "In the preparation of Potash Alum $[\\text{K}_2\\text{SO}_4\\cdot\\text{Al}_2(\\text{SO}_4)_3\\cdot24\\text{H}_2\\text{O}]$, equimolar quantities of $\\text{K}_2\\text{SO}_4$ and $\\text{Al}_2(\\text{SO}_4)_3$ are mixed. What is the shape of Potash Alum crystals obtained?",
+                options: [
+                    "Octahedral",
+                    "Monoclinic",
+                    "Tetragonal",
+                    "Needle-shaped"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 38,
+                q: "Which amino acid is non-chiral (optically inactive) among the 20 standard $\\alpha$-amino acids found in proteins?",
+                options: [
+                    "Glycine",
+                    "Alanine",
+                    "Valine",
+                    "Leucine"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 39,
+                q: "Deficiency of which vitamin causes Pernicious Anaemia?",
+                options: [
+                    "Vitamin $\\text{B}_{12}$ (Cyanocobalamin)",
+                    "Vitamin $\\text{B}_6$ (Pyridoxine)",
+                    "Vitamin $\\text{B}_1$ (Thiamine)",
+                    "Vitamin C (Ascorbic acid)"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 40,
+                q: "The complementary base pairing in DNA double helix is held together by hydrogen bonds. How many hydrogen bonds exist between Guanine (G) and Cytosine (C)?",
+                options: [
+                    "3 Hydrogen bonds",
+                    "2 Hydrogen bonds",
+                    "1 Hydrogen bond",
+                    "4 Hydrogen bonds"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 41,
+                q: "Which hormone regulates glucose level in blood by promoting glycogenesis in liver?",
+                options: [
+                    "Insulin",
+                    "Glucagon",
+                    "Thyroxin",
+                    "Adrenaline"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 42,
+                q: "In Group IV analysis, $\\text{H}_2\\text{S}$ is passed in alkaline medium ($\\text{NH}_4\\text{OH} + \\text{NH}_4\\text{Cl}$) to precipitate $\\text{Ni}^{2+}, \\text{Co}^{2+}, \\text{Zn}^{2+}, \\text{Mn}^{2+}$. Why is alkaline medium required?",
+                options: [
+                    "$\\text{OH}^-$ ions remove $\\text{H}^+$ ions, increasing $[\\text{S}^{2-}]$ to exceed $K_{sp}$ of Group IV sulfides",
+                    "To prevent oxidation of metal ions",
+                    "To reduce metal ions to free metals",
+                    "To suppress ionization of metal salts"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 43,
+                q: "Which cation gives a chocolate brown precipitate with potassium ferrocyanide $\\text{K}_4[\\text{Fe(CN)}_6]$ solution?",
+                options: [
+                    "$\\text{Cu}^{2+}$",
+                    "$\\text{Fe}^{3+}$",
+                    "$\\text{Zn}^{2+}$",
+                    "$\\text{Ni}^{2+}$"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 44,
+                q: "In the preparation of $p$-nitroacetanilide, acetanilide is nitrated using nitrating mixture (conc. $\\text{HNO}_3$ + conc. $\\text{H}_2\\text{SO}_4$) at low temperature ($< 15^\\circ\\text{C}$). What is the major product obtained?",
+                options: [
+                    "$p$-Nitroacetanilide",
+                    "$o$-Nitroacetanilide",
+                    "$m$-Nitroacetanilide",
+                    "2,4-Dinitroacetanilide"
+                ],
+                correct: 0
+            },
+            {
+                type: "critical",
+                id: 45,
+                q: "A salt solution on treatment with dimethylglyoxime (DMG) in presence of $\\text{NH}_4\\text{OH}$ yields a bright rosy-red precipitate. The cation present is:",
+                options: [
+                    "$\\text{Ni}^{2+}$",
+                    "$\\text{Fe}^{2+}$",
+                    "$\\text{Co}^{2+}$",
+                    "$\\text{Zn}^{2+}$"
+                ],
+                correct: 0
+            }
+        ];
+
+        // GLOBAL APP STATE VARIABLES
+        let candidateName = "";
+        let shuffledQuestions = [];
+        let userAnswers = {}; // { qIndex: optionIndex }
+        let markedForReview = {}; // { qIndex: boolean }
+        let visitedQuestions = {}; // { qIndex: boolean }
+        let currentQIndex = 0;
+        let timerSeconds = 3600; // 1 Hour (60 Mins)
+        let timerInterval = null;
+        let captchaAns = 0;
+        let examSubmitted = false;
+
+        // Initialize Captcha & Setup on Page Load
+        window.onload = function() {
+            generateCaptcha();
+        };
+
+        function generateCaptcha() {
+            const num1 = Math.floor(Math.random() * 9) + 1;
+            const num2 = Math.floor(Math.random() * 9) + 1;
+            captchaAns = num1 + num2;
+            document.getElementById('captchaDisplay').innerText = `${num1} + ${num2} = ?`;
+        }
+
+        // SEED SHUFFLE ALGORITHM FOR UNIQUE CANDIDATE QUESTION SEQUENCE
+        function seedShuffle(array, seedString) {
+            let hash = 0;
+            for (let i = 0; i < seedString.length; i++) {
+                hash = seedString.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            
+            let result = [...array];
+            let m = result.length, t, i;
+            while (m) {
+                let pseudoRandom = Math.abs(Math.sin(hash++)) * 10000;
+                i = Math.floor((pseudoRandom - Math.floor(pseudoRandom)) * m--);
+                t = result[m];
+                result[m] = result[i];
+                result[i] = t;
+            }
+            return result;
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('candidateName').value.trim();
+            const passInput = document.getElementById('examPassword').value.trim();
+            const captchaInput = parseInt(document.getElementById('captchaInput').value.trim());
+            const errorDiv = document.getElementById('loginError');
+
+            errorDiv.classList.add('hidden');
+
+            // 1. Password Verification (Current Date DDMMYYYY format)
+            const now = new Date();
+            const dd = String(now.getDate()).padStart(2, '0');
+            const mm = String(now.getMonth() + 1).padStart(2, '0');
+            const yyyy = now.getFullYear();
+            const expectedPass = `${dd}${mm}${yyyy}`;
+
+            if (passInput !== expectedPass) {
+                errorDiv.innerText = `Invalid Password! Password must match today's date in DDMMYYYY format.`;
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            // 2. Captcha Verification
+            if (captchaInput !== captchaAns) {
+                errorDiv.innerText = `Incorrect Captcha answer. Please try again.`;
+                errorDiv.classList.remove('hidden');
+                generateCaptcha();
+                return;
+            }
+
+            candidateName = nameInput;
+
+            // Seed shuffle question bank deterministically based on candidate name
+            shuffledQuestions = seedShuffle(masterQuestions, candidateName.toLowerCase());
+
+            // Update Header & Watermark Text
+            document.getElementById('headerCandidateName').innerText = candidateName;
+            document.getElementById('resCandidateName').innerText = candidateName;
+            
+            setupWatermark(candidateName);
+
+            // Hide Modal Gate & Launch Exam
+            document.getElementById('verificationGate').classList.add('hidden');
+
+            // Request Full Screen Enforcement
+            requestFullScreen();
+
+            // Start Exam Timer & Security Listeners
+            startTimer();
+            setupSecurityListeners();
+
+            // Render Palette & First Question
+            renderPalette();
+            loadQuestion(0);
+        }
+
+        function setupWatermark(name) {
+            const grid = document.getElementById('watermarkGrid');
+            grid.innerHTML = '';
+            grid.classList.remove('hidden');
+            for (let i = 0; i < 12; i++) {
+                const item = document.createElement('div');
+                item.className = 'watermark-item';
+                item.innerText = `${name}\nSoumendra Sir's Biology Classes - 8910587106`;
+                grid.appendChild(item);
+            }
+        }
+
+        function setupSecurityListeners() {
+            // Context menu block
+            document.addEventListener('contextmenu', e => e.preventDefault());
+
+            // Keydown block for inspect element & print screen
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' || 
+                   (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+                   (e.ctrlKey && e.key === 'u') ||
+                   e.key === 'PrintScreen') {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // Tab Switching / Visibility Change Auto-Submit
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden && !examSubmitted) {
+                    alert("SECURITY VIOLATION: You switched tabs or minimized the window. Your exam is being submitted immediately.");
+                    forceSubmitTest();
+                }
+            });
+
+            // Fullscreen change detection
+            document.addEventListener('fullscreenchange', function() {
+                if (!document.fullscreenElement && !examSubmitted) {
+                    alert("SECURITY VIOLATION: You exited Full-Screen mode. The exam will now auto-submit.");
+                    forceSubmitTest();
+                }
+            });
+        }
+
+        function requestFullScreen() {
+            const docEl = document.documentElement;
+            if (docEl.requestFullscreen) {
+                docEl.requestFullscreen().catch(err => console.log(err));
+            }
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's Up! Your exam is being submitted.");
+                    forceSubmitTest();
+                    return;
+                }
+                timerSeconds--;
+                const mins = Math.floor(timerSeconds / 60);
+                const secs = timerSeconds % 60;
+                document.getElementById('timerDisplay').innerText = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function renderPalette() {
+            const paletteGrid = document.getElementById('paletteGrid');
+            paletteGrid.innerHTML = '';
+
+            let countAnswered = 0;
+            let countNotAnswered = 0;
+            let countMarked = 0;
+            let countNotVisited = 0;
+
+            shuffledQuestions.forEach((q, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'w-8 h-8 rounded-full text-xs font-bold transition-all flex items-center justify-center shadow-sm border ';
+
+                const isAnswered = userAnswers[idx] !== undefined;
+                const isMarked = markedForReview[idx] === true;
+                const isVisited = visitedQuestions[idx] === true;
+
+                if (isMarked) {
+                    btn.classList.add('bg-amber-400', 'text-amber-950', 'border-amber-500');
+                    countMarked++;
+                } else if (isAnswered) {
+                    btn.classList.add('bg-emerald-500', 'text-white', 'border-emerald-600');
+                    countAnswered++;
+                } else if (isVisited) {
+                    btn.classList.add('bg-rose-500', 'text-white', 'border-rose-600');
+                    countNotAnswered++;
+                } else {
+                    btn.classList.add('bg-slate-200', 'text-slate-700', 'border-slate-300');
+                    countNotVisited++;
+                }
+
+                if (idx === currentQIndex) {
+                    btn.classList.add('ring-2', 'ring-teal-700', 'ring-offset-1', 'scale-110');
+                }
+
+                btn.innerText = idx + 1;
+                btn.onclick = () => loadQuestion(idx);
+                paletteGrid.appendChild(btn);
+            });
+
+            document.getElementById('countAnswered').innerText = countAnswered;
+            document.getElementById('countNotAnswered').innerText = countNotAnswered;
+            document.getElementById('countMarked').innerText = countMarked;
+            document.getElementById('countNotVisited').innerText = countNotVisited;
+        }
+
+        function loadQuestion(idx) {
+            currentQIndex = idx;
+            visitedQuestions[idx] = true;
+
+            document.getElementById('questionNumberBadge').innerText = `Question ${idx + 1} of 45`;
+            document.getElementById('prevBtn').disabled = (idx === 0);
+
+            const q = shuffledQuestions[idx];
+            const area = document.getElementById('questionContentArea');
+            area.innerHTML = '';
+
+            let html = '';
+
+            // Case Study Prompt Banner
+            if (q.type === 'case') {
+                html += `<div class="mb-4 bg-teal-50 border border-teal-200 p-3.5 rounded-xl text-xs text-teal-950">
+                    <h3 class="font-extrabold text-teal-900 border-b border-teal-200 pb-1 mb-1.5"><i class="fa-solid fa-book-open mr-1.5"></i> ${q.caseTitle}</h3>
+                    <p class="leading-relaxed font-medium">${q.caseText}</p>
+                </div>`;
+            }
+
+            // Question Text
+            html += `<h2 class="text-sm md:text-base font-bold text-slate-800 mb-3 leading-snug">${q.q}</h2>`;
+
+            // Statements Rendering
+            if (q.type === 'statement') {
+                html += `<div class="mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2 text-xs md:text-sm text-slate-800">
+                    <p><strong>Statement I:</strong> ${q.statement1}</p>
+                    <p><strong>Statement II:</strong> ${q.statement2}</p>
+                </div>`;
+            }
+
+            // Options List
+            html += `<div class="space-y-2.5 mt-4">`;
+            q.options.forEach((opt, oIdx) => {
+                const isSelected = userAnswers[idx] === oIdx;
+                html += `
+                    <label onclick="selectOption(${oIdx})" class="flex items-start space-x-3 p-3 rounded-xl border cursor-pointer transition-all text-xs md:text-sm ${
+                        isSelected ? 'bg-teal-50 border-teal-600 text-teal-950 font-semibold ring-1 ring-teal-500' : 'bg-white border-slate-200 hover:bg-slate-50 text-slate-700'
+                    }">
+                        <input type="radio" name="qOpt" ${isSelected ? 'checked' : ''} class="mt-0.5 text-teal-600 focus:ring-teal-500">
+                        <span class="flex-1">${opt}</span>
+                    </label>
+                `;
+            });
+            html += `</div>`;
+
+            area.innerHTML = html;
+            renderPalette();
+
+            // Re-render MathJax formulas on screen
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([area]);
+            }
+        }
+
+        function selectOption(oIdx) {
+            userAnswers[currentQIndex] = oIdx;
+            delete markedForReview[currentQIndex];
+            loadQuestion(currentQIndex);
+        }
+
+        function clearResponse() {
+            delete userAnswers[currentQIndex];
+            delete markedForReview[currentQIndex];
+            loadQuestion(currentQIndex);
+        }
+
+        function markForReview() {
+            markedForReview[currentQIndex] = true;
+            renderPalette();
+            nextQuestion();
+        }
+
+        function prevQuestion() {
+            if (currentQIndex > 0) {
+                loadQuestion(currentQIndex - 1);
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQIndex < shuffledQuestions.length - 1) {
+                loadQuestion(currentQIndex + 1);
+            }
+        }
+
+        function confirmSubmitTest() {
+            const attempted = Object.keys(userAnswers).length;
+            if (confirm(`Are you sure you want to submit your Chemistry exam?\n\nTotal Attempted: ${attempted} / 45`)) {
+                forceSubmitTest();
+            }
+        }
+
+        function forceSubmitTest() {
+            examSubmitted = true;
+            clearInterval(timerInterval);
+
+            // Calculate Marks (+4 correct, -1 wrong, 0 unattempted)
+            let correctCount = 0;
+            let incorrectCount = 0;
+            let unattemptedCount = 0;
+
+            shuffledQuestions.forEach((q, idx) => {
+                const ans = userAnswers[idx];
+                if (ans === undefined) {
+                    unattemptedCount++;
+                } else if (ans === q.correct) {
+                    correctCount++;
+                } else {
+                    incorrectCount++;
+                }
+            });
+
+            const totalScore = (correctCount * 4) - (incorrectCount * 1);
+            const totalAttempted = correctCount + incorrectCount;
+            const accuracy = totalAttempted > 0 ? ((correctCount / totalAttempted) * 100).toFixed(1) : 0;
+
+            // Display Score Summary
+            document.getElementById('resTotalScore').innerText = `${totalScore} / 180`;
+            document.getElementById('resAttempted').innerText = `${totalAttempted} / 45`;
+            document.getElementById('resAccuracy').innerText = `${accuracy}%`;
+            document.getElementById('resCorrect').innerText = correctCount;
+            document.getElementById('resIncorrect').innerText = incorrectCount;
+            document.getElementById('resUnattempted').innerText = unattemptedCount;
+
+            // Display Results Modal
+            document.getElementById('resultModal').classList.remove('hidden');
+
+            // Render Chart.js Graphical Analysis
+            renderChart(correctCount, incorrectCount, unattemptedCount);
+        }
+
+        function renderChart(correct, incorrect, unattempted) {
+            const ctx = document.getElementById('resultChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Correct (+4)', 'Incorrect (-1)', 'Unattempted'],
+                    datasets: [{
+                        data: [correct, incorrect, unattempted],
+                        backgroundColor: ['#10b981', '#f43f5e', '#cbd5e1'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { size: 11, weight: 'bold' },
+                                boxWidth: 12
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function sendMarksToWhatsApp() {
+            const card = document.getElementById('resultCardCapture');
+
+            // Convert Scorecard DOM element to high-resolution PNG image
+            html2canvas(card, { scale: 2 }).then(canvas => {
+                const imageBase64 = canvas.toDataURL("image/png");
+
+                // Prepare WhatsApp Pre-filled message with breakdown
+                const scoreText = document.getElementById('resTotalScore').innerText;
+                const accuracyText = document.getElementById('resAccuracy').innerText;
+                const correct = document.getElementById('resCorrect').innerText;
+                const incorrect = document.getElementById('resIncorrect').innerText;
+
+                const msg = encodeURIComponent(
+                    `*NEET CHEMISTRY CBT EXAM RESULT REPORT*\n` +
+                    `*Topic:* NEET CHEMISTRY XII EXAM SERIES 7 SET A (Biomolecules & Practical Chemistry)\n` +
+                    `*Candidate Name:* ${candidateName}\n` +
+                    `*Total Score:* ${scoreText}\n` +
+                    `*Accuracy:* ${accuracyText}\n` +
+                    `*Correct Answers:* ${correct}\n` +
+                    `*Incorrect Answers:* ${incorrect}\n\n` +
+                    `_Sir, I have completed my CBT Chemistry exam. Attached is my score summary card screenshot._`
+                );
+
+                const waUrl = `https://api.whatsapp.com/send?phone=918910587106&text=${msg}`;
+                
+                // Prompt candidate to download screenshot image
+                const link = document.createElement('a');
+                link.download = `${candidateName.replace(/\s+/g, '_')}_NEET_Biomolecules_Result.png`;
+                link.href = imageBase64;
+                link.click();
+
+                // Open WhatsApp chat window
+                window.open(waUrl, '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
